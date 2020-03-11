@@ -1,0 +1,49 @@
+package v65constructor;
+
+/**
+ * uso de la clase Persona
+ * @author C
+ */
+public class V65constructor {
+
+    public static void main(String[] args) {
+        
+        Persona curso [];
+        curso = new Persona [3];
+        
+        /* ----------------  carga de datos ------------------------*/
+        Persona p1 = new Persona("Ana", 30, 175);
+        Persona p2 = new Persona("Lucas", 27, 185);
+        
+        curso [0]= p1;   /* no es necesario crear el objeto intermedio, lo hago por didáctica*/
+        curso [1]= p2;
+        
+        curso [2]= new Persona("XIAO", 12, 150); /* aquí se hace directamente */
+       
+        /* -------------------------------------------------------- */
+       /* mostramos el array con un bucle for each */
+        for ( Persona aux : curso) {
+            aux.mostrarDatos ();
+        }
+        System.out.println(" ");
+        
+        /* -------------------------------------------------------- */
+        
+        System.out.println("---------- ahora ordenamos --------");
+                       
+        Persona.ordenarDatos( curso );
+
+        for ( Persona aux : curso) {
+            aux.mostrarDatos ();
+        }
+        /* -------------------------------------------------------- */
+        System.out.println("-------- ahora ordenamos alfabéticamente -------");  
+        
+        Persona.ordenarDatosA( curso );
+
+        for ( Persona aux : curso) {
+            aux.mostrarDatos ();
+        }
+    }
+
+}
