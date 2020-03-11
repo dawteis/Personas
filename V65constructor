@@ -1,0 +1,62 @@
+package v65constructor;
+
+public class Persona {
+
+    // atributos
+    String nombre;
+    int edad;
+    int altura;
+
+    // metodo constructor
+    public Persona(String nombre, int edad, int altura) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.altura = altura;
+    }
+
+    public void mostrarDatos() {
+        System.out.println("El nombre es : " + nombre);
+        System.out.println("la edad es : " + edad);
+        System.out.println("la altura  es : " + altura);
+    }
+    
+    public static  void ordenarDatos( Persona  curso []) {
+    boolean cambio=true;
+           while (cambio ) {
+               cambio = false;
+               for (int i=0 ; i< curso.length-1; i++){
+                   
+                   if ( curso[i].edad > curso[i+1].edad) {
+                       Persona aux = curso [i];
+                       curso [i]= curso [i+1];
+                       curso [i+1]= aux;
+                       cambio = true;
+                   }
+                }
+               
+           } // fin del while
+    } // fin del método ordenarDatos
+    
+        public static  void ordenarDatosA( Persona  curso []) {
+        boolean cambio=true; 
+        String n1,n2;
+        int r;
+           while (cambio ) {
+               cambio = false;
+               for (int i=0 ; i< curso.length-1; i++){
+                   
+                   n1= curso[i].nombre ;
+                   n2=curso[i+1].nombre;
+             /* la forma de comparar 2 strings es r=cadena1.compareTo(cad2)  */
+             /* si r<0  cadena1 es menor; si r>0 cadena1 es mayor; si r=0 son iguales*/
+                   r = n1.compareTo (n2);
+                   if ( r >0 ) {
+                       Persona aux = curso [i];
+                       curso [i]= curso [i+1];
+                       curso [i+1]= aux;
+                       cambio = true;
+                   }
+              }
+            } // fin del while  
+    }// fin del método ordenarDatosA
+} // fin de la clase Persona
